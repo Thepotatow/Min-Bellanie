@@ -482,14 +482,14 @@ style quick_button_text:
 
 screen navigation():
 
-    vbox:
+    hbox:
+
         style_prefix "navigation"
 
         xpos gui.navigation_xpos
         yalign 0.5
 
         spacing gui.navigation_spacing
-
 
         if main_menu:
 
@@ -665,6 +665,7 @@ screen game_menu(title, scroll=None, yinitial=0.0, spacing=0):
                 else:
 
                     transclude
+
 
     use navigation
 
