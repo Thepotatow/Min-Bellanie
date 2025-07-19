@@ -484,10 +484,10 @@ screen navigation():
 
     hbox:
 
-        style_prefix "navigation"
+        style_prefix "hnavigation"
 
-        xpos gui.navigation_xpos
-        yalign 0.5
+        xalign 0.35
+        yalign 0.32
 
         spacing gui.navigation_spacing
 
