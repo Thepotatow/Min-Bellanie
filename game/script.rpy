@@ -1242,7 +1242,7 @@ label script_14:
     menu:
         "Ventilationen":
             #14a
-            jump phone_call2
+            jump ventilationen
 
         "Krypgrunden":
             #14b
@@ -1250,5 +1250,9 @@ label script_14:
             with fade
             jump script_10_cont
 
+label ventilationen:
+
+
+label krypgrunden:
 
     return
