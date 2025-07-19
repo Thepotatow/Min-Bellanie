@@ -25,7 +25,8 @@ init python:
 
 default security_cams = []
 # When adding a camera:
-# $ security_cams.append(camera("name", "map_icon.png", "detail.webm"))           
+# $ security_cams.append(camera("name", "map_icon.png", "detail.webm")) 
+#$ security_cams.append(Camera("Camera 1", "map_icon.png", "movie/cutscene-test-2.webm"))
 
 
 transform right_char:
@@ -68,13 +69,11 @@ label start:
     sv "intro"
 
     scene bg courtyard
-    show screen side_menu1
+    show screen side_menu
     with fade
 
     sv "Tyler bad mig träffa honom vid rinken, men jag har inte råd att komma sent till ännu en lektion, pappa hade dödat mig."
-    
-    $ security_cams.append(Camera("Camera 1", "map_icon.png", "movie/cutscene-test-2.webm"))
-    
+        
     $ renpy.force_autosave()
 
     menu:
