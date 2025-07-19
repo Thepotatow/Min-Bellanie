@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/screens.rpy", line 489: Line is indented, but the preceding style_prefix statement does not expect a block. Please check this line's indentation. You may have forgotten a colon (:).
-    xalign 0.1
-    ^
+File "game/script.rpy", line 1209: end of line expected.
+    jump script_14:
+                  ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Sat Jul 19 14:18:57 2025
+Sat Jul 19 15:07:08 2025

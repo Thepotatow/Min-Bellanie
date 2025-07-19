@@ -31,8 +31,6 @@ default alvin_good = True
 default tyler_lie = True
 
 
-default keep_distance = True
-
 default ending_10 = False
 
 default ending_9 = False

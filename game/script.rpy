@@ -664,19 +664,40 @@ label script_7b_6b:
 
     sv "Hon ser inte ut att gilla honom så mycket. Han borde se det från en mil bort. Gör inget dumt nu, Alvin."
 
-    a "Förresten så var den där lappen från mig."
-
-    sv "Vafan sa han nu? Dumt, Alvin."
-
-    b "Jaha… Ja, jag är väl ledig imorgon."
-
     a "Får jag boka upp dig?"
 
-    b "Eeh. Visst. En kväll går bra."
+    sv "Vafan sa han nu? Passa dig, Alvin."
 
-    sv "Säg inte ja då! Alvin, din blinda jävel! Ser du inte att hon uppenbarligen inte gillar dig?! Jag kan inte se på honom. Och jag behöver nåt starkt."
+    b "Ja, jag antar att jag är ledig imorgon. En kväll går bra."
 
-    jump script_8
+    sv "Säg inte ja då! Alvin, din blinda jävel! Ser du inte att hon uppenbarligen inte gillar dig?! Du gör henne obekväm! Om du tar ett enda steg till så ska jag-"
+
+    b "Vet du vad? Det kanske inte är en så bra idé. Du är ganska bra vän med Tyler och jag har inte precis något intresse för dig."
+
+    a "En enda kväll så lovar jag att jag kan ändra på det."
+
+    b "Nej tack."
+
+    a "Bellanie…"
+
+    b "Alvin, jag vill inte! Okej."
+
+    a "Men, vänta lite."
+
+    c "Alvin!!"
+
+    sv "Just som jag är på väg fram för att nita Alvin så ser jag att Tyler rycker till och riktar blicken mot mig. Jag inser att det instinktiva våldsamma bemötandet kanske borde tyglas en aning så jag ställer mig bara framför Bellanie och riktar min uppmärksamhet mot Alvin."
+
+    c "Lägg av."
+
+    a "Vad vill du? Har jag gjort nåt fel?"
+
+    c "Allvarligt. Backa. Hon sa nej."
+
+    t "Vad händer här då?"
+
+    hide belalnie
+    jump script_8_5
 
 label script_8:
     # tyler konfronterar cass ang alvin
@@ -693,20 +714,26 @@ label script_8:
 label script_8_1:
     c "Jag hade vägarna förbi."
 
+    t "Du ser ut som att du vill strypa någon. Är det min syster eller Alvin du tittar på?"
+
+    c "Det är Alvin. Kolla själv."
+
+    t "Vad är felet?"
+
     jump script_8_5
 
 label script_8_2:
     c "Jag tänkte jag kunde säg hej i alla fall."
 
+    t "Du ser ut som att du vill strypa någon. Är det min syster eller Alvin du tittar på?"
+
+    c "Det är Alvin. Kolla själv."
+
+    t "Vad är felet?"
+
     jump script_8_5
 
 label script_8_5:
-    t "Vad bra. Men tro inte att jag inte har märkt..."
-
-    sv "Märkt vad? Snälla säg inte “hur du ser på min syster” - jag lovar jag ska va’ snäll."
-
-    t "Du har bettet dig som ett as mot Alvin hela kvällen. Varför?"
-
     menu:
         "Ljug och säg att det är lugnt":
             $ tyler_lie = True
@@ -718,36 +745,43 @@ label script_8_5:
 
 
 label script_8a:
-    c "Inget. Allt är bra, jag har väl bara inte pratat med honom så mycket ikväll."
 
-    t "Okej, dåså. Men sköt dig, han ser upp till dig."
+    c "Inget. Allt är bra."
 
-    c "Jag vet. Lycka till."
+    t "Okej, dåså. Men sköt dig, han ser upp till dig. Och DU sluta stöta på min syster."
 
-    jump script_9a
+    a "Okej. Förlåt."
 
+    c "Jag borde gå. Jag kan inte stanna för länge, du vet familjen."
 
-label script_8b:
-    if alvin_good:
-        jump script_8b_6a
-    else:
-        jump script_8b_6b
+    t "Jag vet... Lycka till. Och Cassidy… Tack"
 
-
-label script_8b_6a:
-    c "Jag hörde honom prata med din syster. Han har tydligen skickat lappar anonymt till henne, antagligen för att han inte vill att du ska veta det."
-
-    c "Han bjöd ut henne nyss och jag gillar inte hans blick så jag håller ett öga på honom. Det är allt."
-
-    t "Det var som fan. Tack för att du är ärlig. Jag ska ha koll på honom."
+    sv "Innan jag går slänger jag en sista blick på Bellanie för att se om hon är okej. Hon ger mig sitt underbara leende och jag ser ett tyst tack i hennes ögon. Nu måste jag väl ändå va’ på hennes goda sida. Nu kan hon inte säga nej längre. Inte till mig, inte till balen och inte till något annat heller."
 
     jump script_9
 
 
-label script_8b_6b:
-    c "Jag hörde honom prata med din syster. Han bjöd ut henne och hon verkade inte så bekväm med honom. Du borde hålla ett öga på honom."
+label script_8b:
+   
+    c "Alvin skulle just göra ett viktigt livsval. Det står mellan att gå härifrån eller en bruten näsa."
 
-    t "Åh fan. Tack för att du säger det. Jag ska hålla honom."
+    t "Stopp!"
+
+    c "Han försöker komma under byxorna på din syster."
+
+    t "Åh fan! Då ska jag hålla ett öga på honom. Men tro inte att jag inte märker, Cassidy."
+
+    c "Varför riktar han plötsligt anklagelser mot mig? Om inte… Snälla säg inte “hur du ser på min syster” - jag lovar jag ska va’ snäll."
+
+    t "Det här är inte första gången du har velat ge dig på Alvin. Jag vet att du inte gillar människor och jag fattar om du inte vill lita på honom som du litar på mig. Men det är ingen som begär det av dig, Cass. Alvin ser upp till dig och jag är säker på att han är nöjd med lite enkel medmänsklighet."
+
+    t "Men bara för att han råkar befinna sig i samma rum som dig lite oftare än vad du hade önskat så ger det dig inte rätten att bete dig som ett as. Och ge mig inte den blicken. Jag säger det här för att jag är den enda som kan säga det här till dig utan att spendera resten av kvällen i en ambulans så tacka mig. Jag varnar dig"
+
+    c "Jag vet. Du har rätt. Och jag behöver gå hem innan det är jag eller mamma som spenderar resten av natten i en ambulans."
+
+    t "Okej. Lycka till."
+
+    c "Innan jag går slänger jag en sista blick på Bellanie för att se om hon är okej. Hon ger mig sitt underbara leende och jag ser ett tyst tack i hennes ögon. Nu måste jag väl ändå va’ på hennes goda sida. Nu kan hon inte säga nej längre. Inte till mig, inte till balen och inte till något annat heller."
 
     jump script_9
 
@@ -858,8 +892,8 @@ label script_9a_cont:
 
 
 label game_over_12:
-    #ending 12 bad ending
-    sv "*dad gives you a punch*"
+    #ending 12 bad ending pappan slår dig redlös för säms är du
+    sv "*Du får ett slag i av pappa*"
 
     return
 
@@ -908,12 +942,10 @@ label script_10_cont:
     menu:
         "Håll avstånd":
             #10a
-            $ keep_distance = True
             jump script_10a
 
         "Håll vakt":
             #10b
-            $ keep_distance = False
             jump script_10b
 
 
@@ -927,11 +959,6 @@ label script_10a:
     jump script_11
 
 label script_10b:
-    if affection_dad >= 0:
-        $ ending_10 = True
-    else:
-        $ ending_9 = True
-
     sv "Om jag följer efter henne på avstånd skulle det	Se ut som att jag förföljer henne. Jag borde hålla mig nära så hon kan se mig."
 
     scene black 
@@ -941,20 +968,25 @@ label script_10b:
 
     sv "Det tog ett par timmar att gå hem precis som jag trodde. Och som det ser ut nu så verkar det som att hon byter om. Kan jag verkligen lämna ett sånt här tillfälle bara sådär?"
 
+    
     jump script_11
 
 
 label script_11:
     menu:
-        "Stanna":
+        "stanna":
             #11a
-            scene black
+            if affection_dad >= 0:
+                $ ending_10 = True
+            else:
+                $ ending_9 = True
+            scene black 
             with fade
             jump script_11_5
 
-        "Gå hem":
+        "gå hem":
             #11b
-            scene black
+            scene black 
             with fade
             jump script_11_5
 
@@ -998,8 +1030,10 @@ label script_12:
             jump script_12a
 
         "Gå närmre":
-            #12b
-            jump script_12b
+            if tyler_lie: # ljuger för tyler
+                jump script_12b_8a
+            else:
+                jump script_12b_8b
 
 
 label script_12a:
@@ -1099,13 +1133,6 @@ label enging_3:
     return
 
 
-label script_12b:
-    if tyler_lie: # ljuger för tyler
-        jump script_12b_8a
-    else:
-        jump script_12b_8b
-
-
 label script_12b_8a:
     c "Jag ville bara veta hur mycket tid jag har ensam med dig."
 
@@ -1121,10 +1148,14 @@ label script_12b_8a:
 
     #heartbeat sound loop starts
 
-    b "Cassidy… jag säger till Tyler. Jag kommer berätta för honom om du inte släpper mig nu."
+    b "Cassidy... jag säger till Tyler. Jag kommer berätta för honom om du inte släpper mig nu."
 
+    
+    jump ending_4
+
+label ending_4:
     #Cut scene.
-    #game over ending 4
+    #game over ending 4 
 
 
 label script_12b_8b:
@@ -1198,5 +1229,26 @@ label script_13b:
 
 
     # ett object är ritiningarna som är ritningarna
+
+    scene black 
+    with fade
+
+    jump script_14
+
+label script_14:
+
+    sv "Jag vet att det enda sättet att ta sig in utan att det märks är genom jordkällaren eller genom ventilationen. Går jag genom jordkällaren kan jag ta mig vart som helst i huset underifrån. Går jag genom ventilationen kan jag ta mig in i väggarna och till vilket rum jag vill."
+
+    menu:
+        "Ventilationen":
+            #14a
+            jump phone_call2
+
+        "Krypgrunden":
+            #14b
+            scene black
+            with fade
+            jump script_10_cont
+
 
     return
