@@ -1153,6 +1153,7 @@ label script_12b_8a:
     
     jump ending_4
 
+
 label ending_4:
     #Cut scene.
     #game over ending 4 
@@ -1176,6 +1177,7 @@ label script_12b_8b:
     with fade
 
     jump script_13a
+
 
 label script_13a:
     #mobilsamtal
@@ -1235,9 +1237,12 @@ label script_13b:
 
     jump script_14
 
+
 label script_14:
 
-    sv "Jag vet att det enda sättet att ta sig in utan att det märks är genom jordkällaren eller genom ventilationen. Går jag genom jordkällaren kan jag ta mig vart som helst i huset underifrån. Går jag genom ventilationen kan jag ta mig in i väggarna och till vilket rum jag vill."
+    sv "Jag vet att det enda sättet att ta sig in utan att det märks är genom jordkällaren eller genom ventilationen. Går jag genom jordkällaren kan jag ta mig vart som helst i huset underifrån."
+
+    sv "Går jag genom ventilationen kan jag ta mig in i väggarna och till vilket rum jag vill."
 
     menu:
         "Ventilationen":
@@ -1248,11 +1253,161 @@ label script_14:
             #14b
             scene black
             with fade
-            jump script_10_cont
+            jump krypgrunden
+
 
 label ventilationen:
+    #cutscene
+
+    if alvin_good:
+        jump script_14_8b_12b
+    else:
+        jump script_14_6b
 
 
 label krypgrunden:
+    #cutscene
 
+    if alvin_good:
+        jump script_14_8b_12b_k
+    else:
+        jump script_14_6b_k
+
+
+label script_14_8b_12b_k:
+
+    b "Tyler, kan du lyssna en stund?"
+
+    t "Visst. Vad är det?"
+
+    b "Efter din hockeymatch igår så träffade jag Cassidy på parkeringen…"
+
+    t "Okej. Vadå då?"
+
+    b "Han börjar bli lite närgången. Jag gillar det inte riktigt."
+
+    t "Okej… Jag ska hålla ett öga på honom. Säg till om något händer, Okej?"
+
+    b "Okej. Tack så mycket."
+
+    sv "Helvete. Tyler, tro inte på henne. Jag är din bästa vän jag lovade ju att jag skulle se efter henne. Du bad mig… "
+
+    jump script_15_ab
+
+
+label script_14_6b_k:
+
+    t "Bell, kan du lyssna?"
+
+    b "Jag lyssnar."
+
+    t "Alvin. Har han snackat med dig?"
+
+    b "Ja, när vi var hos Emily. Han är lite obehaglig."
+
+    t "Säg till mig nästa gång."
+
+    b "Okej, det ska jag."
+
+    sv "Nästa gång? Om du väntar är det för sent. Det är din syster för fan. Gör nånting! Annars gör jag det."
+
+    jump script_15_ab
+
+label script_14_8b_12b_v:
+
+    b "Tyler, kan du lyssna en stund?"
+
+    t "Visst. Vad är det?"
+
+    b "Efter din hockeymatch igår så träffade jag Cassidy på parkeringen…"
+
+    t "Okej. Vadå då?"
+
+    b "Han börjar bli lite närgången. Jag gillar det inte riktigt."
+
+    t "Okej… Jag ska hålla ett öga på honom. Säg till om något händer, Okej?"
+
+    b "Okej. Tack så mycket."
+
+    sv "Helvete. Tyler, tro inte på henne. Jag är din bästa vän jag lovade ju att jag skulle se efter henne. Du bad mig… "
+
+    jump script_15_ab
+
+
+label script_14_6b_v:
+
+    t "Bell, kan du lyssna?"
+
+    b "Jag lyssnar."
+
+    t "Alvin. Har han snackat med dig?"
+
+    b "Ja, när vi var hos Emily. Han är lite obehaglig."
+
+    t "Säg till mig nästa gång."
+
+    b "Okej, det ska jag."
+
+    sv "Nästa gång? Om du väntar är det för sent. Det är din syster för fan. Gör nånting! Annars gör jag det."
+
+    jump script_15_ab
+
+
+label script_15_k:
+    #kryp
+    menu:
+        "“Hacka kamerorna":
+            hide screen side_menu1
+            show screen side_menu2
+            show screen camera_screen
+            jump script_15a_k
+
+        "Gå hem":
+            
+            scene black
+            with fade
+            jump script_15b
+
+label script_15_v:
+    #vent
+    menu:
+        "“Hacka kamerorna":
+            hide screen side_menu1
+            show screen side_menu2
+            show screen camera_screen
+            jump script_15a_v
+
+        "Gå hem":
+            scene black
+            with fade
+            jump script_15b
+
+label script_15a_v:
+
+    #Han hackar sig in på kamerorna och kan skrolla mellan olika kameror (kök, vardagsrum, hall, Bellanie’s rum. Tyler’s rum. Föräldrars rum, kontor) Andra gången man skrollar till hallen syns Tyler i kameran (Options timer) Genom både krypgrunden och väggen måste du välja höger eller vänster innan timern går ut. Går timern ut kommer Tyler få tag på dig 
+    
+    #Cut scene. ENDING 5-v
+
+    jump script_15b
+
+
+label script_15a_k:
+
+    #Han hackar sig in på kamerorna och kan skrolla mellan olika kameror (kök, vardagsrum, hall, Bellanie’s rum. Tyler’s rum. Föräldrars rum, kontor) Andra gången man skrollar till hallen syns Tyler i kameran (Options timer) Genom både krypgrunden och väggen måste du välja höger eller vänster innan timern går ut. Går timern ut kommer Tyler få tag på dig 
+    
+    #Cut scene. ENDING 5-k
+
+    jump script_15b
+
+
+label ending_5_v:
+    # cutscenes
+
+
+label ending_5_k:
+    # cutscenes
+
+
+label script_15b:
+    
     return

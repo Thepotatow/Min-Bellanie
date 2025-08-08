@@ -30,6 +30,7 @@ default alvin_good = True
 
 default tyler_lie = True
 
+default camera_hacked = True
 
 default ending_10 = False
 
