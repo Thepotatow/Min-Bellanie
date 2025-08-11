@@ -1356,7 +1356,7 @@ label script_14_6b_v:
 label script_15_k:
     #kryp
     menu:
-        "“Hacka kamerorna":
+        "Hacka kamerorna":
             hide screen side_menu1
             show screen side_menu2
             show screen camera_screen
@@ -1371,7 +1371,7 @@ label script_15_k:
 label script_15_v:
     #vent
     menu:
-        "“Hacka kamerorna":
+        "Hacka kamerorna":
             hide screen side_menu1
             show screen side_menu2
             show screen camera_screen
@@ -1409,5 +1409,134 @@ label ending_5_k:
 
 
 label script_15b:
-    
+    #hema hallen
+
+    b "Vart har du varit då?"
+
+    menu:
+        "Ute med vänner":
+            $ affection_burt -= 1
+            jump script_16a
+
+        "Hockeyträning med Tyler":
+            #makar detta scense
+            $ affection_burt += 1
+            jump script_16b
+
+
+label script_16a:
+    c "Jag var ute med några vänner bara."
+
+    b "Säg till nästa gång."
+
+    c "Ja, pappa. Förlåt."
+
+    b "Stick då"
+
+    jump script_16
+
+
+label script_16b:
+    c "Jag hade hockeyträning med Tyler."
+
+    b "Bra."
+
+    jump script_16
+
+
+label script_16:
+
+    if alvin_good:
+        sv "Fan, nu har hon sagt till Tyler. Han vet vad jag har gjort han kommer döda mig. Jag har inte en chans. Det är slut."
+    else:
+        sv "Jag hatar Alvin. Och jag hatar Tyler för att han inte gör ett skit åt det. Men Tyler skulle förstå om jag gjorde något. Han skulle fatta att jag är kär i hans syster. Om han inte redan gjort det… "
+
+    scene black
+    with fade 
+    #Han går och lägger sig. Kan skrolla genom kamerorna igen men för varje bild man skrollar förbi blir den mer och mer distorterad. 
+
+
+    #Cut scene: 31:16
+    menu:
+        "Stäng av teven":
+            jump CUTSCENE_31_16a
+
+
+        "Stäng ljudet på teven":
+            jump CUTSCENE_31_16b
+
+
+label CUTSCENE_31_16a:
+    #
+    jump script_16_cont
+
+
+label CUTSCENE_31_16b:
+    #
+    jump script_16_cont
+
+
+label script_16_cont:
+
+    sv "Det kanske är bättre att bara avsluta det? Det måste jag göra nu. Jag måste tillbaka dit och avsluta det jag påbörjade."
+
+    scene balck 
+    with fade
+
+    jump script_18:
+
+
+label script_18:
+    ##utanför ballanies hus
+
+    menu:
+        "Krypgrund":
+            jump kryp_18a
+
+
+        "Ventilation":
+            jump ventil_18b
+
+
+label kryp_18a:
+    #
+    menu:
+        "Höger":
+           
+
+        "Vänster":
+            
+    #kommer till henne rum
+
+
+label ventil_18b:
+    #
+    menu:
+        "Höger":
+           
+
+        "Vänster":
+            
+    #kommer till henne rum
+
+    menu:
+        "Flytta gallret":
+           
+
+        "Hämta Bellanie":
+            jump CUTSCENE_32_18
+
+    menu:
+        "Stäng dörren":
+           
+
+        "Hämta Bellanie":
+            jump CUTSCENE_32_18
+
+        #ljudet väker henne?
+
+        sv "Fan, hon vet att jag är här. Hon är vaken. Hon har sett mig. Helvete, nu måste jag vara snabb."
+            
+
+label CUTSCENE_32_18:
     return
